@@ -1,0 +1,70 @@
+{
+   "cap_add" : null,
+   "cap_drop" : null,
+   "cmd" : "",
+   "cpu_priority" : 50,
+   "devices" : null,
+   "enable_publish_all_ports" : false,
+   "enable_restart_policy" : false,
+   "enabled" : true,
+   "entrypoint_default" : "/run.sh",
+   "env_variables" : [
+      {
+         "key" : "PATH",
+         "value" : "/usr/share/grafana/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+      },
+      {
+         "key" : "GF_PATHS_CONFIG",
+         "value" : "/etc/grafana/grafana.ini"
+      },
+      {
+         "key" : "GF_PATHS_DATA",
+         "value" : "/var/lib/grafana"
+      },
+      {
+         "key" : "GF_PATHS_HOME",
+         "value" : "/usr/share/grafana"
+      },
+      {
+         "key" : "GF_PATHS_LOGS",
+         "value" : "/var/log/grafana"
+      },
+      {
+         "key" : "GF_PATHS_PLUGINS",
+         "value" : "/var/lib/grafana/plugins"
+      },
+      {
+         "key" : "GF_PATHS_PROVISIONING",
+         "value" : "/etc/grafana/provisioning"
+      }
+   ],
+   "exporting" : false,
+   "image" : "grafana/grafana:6.1.6",
+   "is_ddsm" : false,
+   "is_package" : false,
+   "links" : [],
+   "memory_limit" : 0,
+   "name" : "grafana",
+   "network" : [
+      {
+         "driver" : "bridge",
+         "name" : "bridge"
+      }
+   ],
+   "network_mode" : "bridge",
+   "port_bindings" : [
+      {
+         "container_port" : 3000,
+         "host_port" : 3000,
+         "type" : "tcp"
+      }
+   ],
+   "privileged" : false,
+   "shortcut" : {
+      "enable_shortcut" : false
+   },
+   "ulimits" : null,
+   "use_host_network" : false,
+   "volume_bindings" : [],
+   "volumes_from" : null
+}

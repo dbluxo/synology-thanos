@@ -1,0 +1,72 @@
+{
+   "cap_add" : [],
+   "cap_drop" : [],
+   "cmd" : "server /data",
+   "cpu_priority" : 50,
+   "devices" : null,
+   "enable_publish_all_ports" : false,
+   "enable_restart_policy" : false,
+   "enabled" : true,
+   "entrypoint_default" : [],
+   "env_variables" : [
+      {
+         "key" : "PATH",
+         "value" : "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+      },
+      {
+         "key" : "MINIO_UPDATE",
+         "value" : "off"
+      },
+      {
+         "key" : "MINIO_ACCESS_KEY_FILE",
+         "value" : "access_key"
+      },
+      {
+         "key" : "MINIO_SECRET_KEY_FILE",
+         "value" : "secret_key"
+      },
+      {
+         "key" : "MINIO_SECRET_KEY",
+         "value" : "Need8Chars"
+      },
+      {
+         "key" : "MINIO_ACCESS_KEY",
+         "value" : "smth"
+      }
+   ],
+   "exporting" : false,
+   "image" : "minio/minio:RELEASE.2019-05-02T19-07-09Z",
+   "is_ddsm" : false,
+   "is_package" : false,
+   "links" : [],
+   "memory_limit" : 0,
+   "name" : "minio",
+   "network" : [
+      {
+         "driver" : "bridge",
+         "name" : "bridge"
+      }
+   ],
+   "network_mode" : "bridge",
+   "port_bindings" : [
+      {
+         "container_port" : 9000,
+         "host_port" : 8000,
+         "type" : "tcp"
+      }
+   ],
+   "privileged" : false,
+   "shortcut" : {
+      "enable_shortcut" : false
+   },
+   "ulimits" : null,
+   "use_host_network" : false,
+   "volume_bindings" : [
+      {
+         "host_volume_file" : "/docker/minio/data",
+         "mount_point" : "/data",
+         "type" : "rw"
+      }
+   ],
+   "volumes_from" : null
+}

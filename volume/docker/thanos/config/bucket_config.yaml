@@ -1,0 +1,7 @@
+type: S3
+config:
+  bucket: demo-bucket
+  access_key: smth
+  secret_key: Need8Chars
+  endpoint: 192.168.2.12:8000
+  insecure: true

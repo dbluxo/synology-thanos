@@ -1,0 +1,57 @@
+{
+   "cap_add" : [],
+   "cap_drop" : [],
+   "cmd" : "--config.file\\=/etc/prometheus/prometheus.yml --storage.tsdb.retention.time\\=2d --storage.tsdb.path\\=/prometheus --web.console.libraries\\=/usr/share/prometheus/console_libraries --web.console.templates\\=/usr/share/prometheus/consoles --storage.tsdb.max-block-duration\\=2h --storage.tsdb.min-block-duration\\=2h --web.enable-lifecycle",
+   "cpu_priority" : 50,
+   "devices" : null,
+   "enable_publish_all_ports" : false,
+   "enable_restart_policy" : false,
+   "enabled" : true,
+   "entrypoint_default" : "/bin/prometheus",
+   "env_variables" : [
+      {
+         "key" : "PATH",
+         "value" : "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+      }
+   ],
+   "exporting" : false,
+   "image" : "prom/prometheus:v2.9.2",
+   "is_ddsm" : false,
+   "is_package" : false,
+   "links" : [],
+   "memory_limit" : 0,
+   "name" : "prometheus-1",
+   "network" : [
+      {
+         "driver" : "bridge",
+         "name" : "bridge"
+      }
+   ],
+   "network_mode" : "bridge",
+   "port_bindings" : [
+      {
+         "container_port" : 9090,
+         "host_port" : 9090,
+         "type" : "tcp"
+      }
+   ],
+   "privileged" : false,
+   "shortcut" : {
+      "enable_shortcut" : false
+   },
+   "ulimits" : null,
+   "use_host_network" : false,
+   "volume_bindings" : [
+      {
+         "host_volume_file" : "/docker/prometheus-1/data",
+         "mount_point" : "/prometheus",
+         "type" : "rw"
+      },
+      {
+         "host_volume_file" : "/docker/prometheus-1/config",
+         "mount_point" : "/etc/prometheus/",
+         "type" : "rw"
+      }
+   ],
+   "volumes_from" : null
+}

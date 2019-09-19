@@ -1,0 +1,52 @@
+{
+   "cap_add" : null,
+   "cap_drop" : null,
+   "cmd" : "--config.file\\=/etc/blackbox_exporter/config.yml",
+   "cpu_priority" : 50,
+   "devices" : null,
+   "enable_publish_all_ports" : false,
+   "enable_restart_policy" : false,
+   "enabled" : true,
+   "entrypoint_default" : "/bin/blackbox_exporter",
+   "env_variables" : [
+      {
+         "key" : "PATH",
+         "value" : "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+      }
+   ],
+   "exporting" : false,
+   "image" : "prom/blackbox-exporter:v0.14.0",
+   "is_ddsm" : false,
+   "is_package" : false,
+   "links" : [],
+   "memory_limit" : 0,
+   "name" : "blackbox-exporter",
+   "network" : [
+      {
+         "driver" : "bridge",
+         "name" : "bridge"
+      }
+   ],
+   "network_mode" : "bridge",
+   "port_bindings" : [
+      {
+         "container_port" : 9115,
+         "host_port" : 9115,
+         "type" : "tcp"
+      }
+   ],
+   "privileged" : false,
+   "shortcut" : {
+      "enable_shortcut" : false
+   },
+   "ulimits" : null,
+   "use_host_network" : false,
+   "volume_bindings" : [
+      {
+         "host_volume_file" : "/docker/blackbox-exporter/config.yml",
+         "mount_point" : "/etc/blackbox_exporter/config.yml",
+         "type" : "rw"
+      }
+   ],
+   "volumes_from" : null
+}

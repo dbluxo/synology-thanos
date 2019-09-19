@@ -1,0 +1,46 @@
+{
+   "cap_add" : [],
+   "cap_drop" : [],
+   "cmd" : "store --data-dir\\=/tmp/thanos/store --grpc-address\\=0.0.0.0:10095 --http-address\\=0.0.0.0:10905 --objstore.config-file\\=/etc/thanos/bucket_config.yaml --cluster.disable",
+   "cpu_priority" : 50,
+   "devices" : null,
+   "enable_publish_all_ports" : false,
+   "enable_restart_policy" : false,
+   "enabled" : true,
+   "entrypoint_default" : "/bin/thanos",
+   "env_variables" : [
+      {
+         "key" : "PATH",
+         "value" : "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+      }
+   ],
+   "exporting" : false,
+   "image" : "improbable/thanos:v0.4.0",
+   "is_ddsm" : false,
+   "is_package" : false,
+   "links" : [],
+   "memory_limit" : 0,
+   "name" : "thanos-store-gateway",
+   "network" : [
+      {
+         "driver" : "host",
+         "name" : "host"
+      }
+   ],
+   "network_mode" : "host",
+   "port_bindings" : [],
+   "privileged" : false,
+   "shortcut" : {
+      "enable_shortcut" : false
+   },
+   "ulimits" : null,
+   "use_host_network" : true,
+   "volume_bindings" : [
+      {
+         "host_volume_file" : "/docker/thanos/config",
+         "mount_point" : "/etc/thanos/",
+         "type" : "rw"
+      }
+   ],
+   "volumes_from" : null
+}

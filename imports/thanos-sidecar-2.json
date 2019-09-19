@@ -1,0 +1,51 @@
+{
+   "cap_add" : [],
+   "cap_drop" : [],
+   "cmd" : "sidecar --tsdb.path\\=/prometheus --prometheus.url\\=http://192.168.2.12:9080 --grpc-address\\=0.0.0.0:10092 --http-address\\=0.0.0.0:10903 --objstore.config-file\\=/etc/thanos/bucket_config.yaml --cluster.disable",
+   "cpu_priority" : 50,
+   "devices" : null,
+   "enable_publish_all_ports" : false,
+   "enable_restart_policy" : false,
+   "enabled" : true,
+   "entrypoint_default" : "/bin/thanos",
+   "env_variables" : [
+      {
+         "key" : "PATH",
+         "value" : "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+      }
+   ],
+   "exporting" : false,
+   "image" : "improbable/thanos:v0.4.0",
+   "is_ddsm" : false,
+   "is_package" : false,
+   "links" : [],
+   "memory_limit" : 0,
+   "name" : "thanos-sidecar-2",
+   "network" : [
+      {
+         "driver" : "host",
+         "name" : "host"
+      }
+   ],
+   "network_mode" : "host",
+   "port_bindings" : [],
+   "privileged" : false,
+   "shortcut" : {
+      "enable_shortcut" : false
+   },
+   "ulimits" : null,
+   "use_host_network" : true,
+   "volume_bindings" : [
+      {
+         "host_volume_file" : "/docker/prometheus-2/data",
+         "mount_point" : "/prometheus",
+         "type" : "rw"
+      },
+      {
+         "host_volume_file" : "/docker/thanos/config",
+         "mount_point" : "/etc/thanos/",
+         "type" : "rw"
+      }
+   ],
+   "volumes_from" : null
+}

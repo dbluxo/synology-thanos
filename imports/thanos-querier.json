@@ -1,0 +1,46 @@
+{
+   "cap_add" : [],
+   "cap_drop" : [],
+   "cmd" : "query --grpc-address\\=0.0.0.0:10091 --http-address\\=0.0.0.0:10902 --query.replica-label\\=replica --store\\=192.168.2.12:10095 --store\\=192.168.2.12:10091 --store\\=192.168.2.12:10092",
+   "cpu_priority" : 50,
+   "devices" : null,
+   "enable_publish_all_ports" : false,
+   "enable_restart_policy" : false,
+   "enabled" : true,
+   "entrypoint_default" : "/bin/thanos",
+   "env_variables" : [
+      {
+         "key" : "PATH",
+         "value" : "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+      }
+   ],
+   "exporting" : false,
+   "image" : "improbable/thanos:v0.4.0",
+   "is_ddsm" : false,
+   "is_package" : false,
+   "links" : [],
+   "memory_limit" : 0,
+   "name" : "thanos-querier",
+   "network" : [
+      {
+         "driver" : "bridge",
+         "name" : "bridge"
+      }
+   ],
+   "network_mode" : "bridge",
+   "port_bindings" : [
+      {
+         "container_port" : 10902,
+         "host_port" : 10904,
+         "type" : "tcp"
+      }
+   ],
+   "privileged" : false,
+   "shortcut" : {
+      "enable_shortcut" : false
+   },
+   "ulimits" : null,
+   "use_host_network" : false,
+   "volume_bindings" : [],
+   "volumes_from" : null
+}
